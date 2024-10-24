@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!DOCTYPE html>
+  <html lang="ko">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="3containers.css" />
+      <link rel="stylesheet" href="2button.css" />
+      <link rel="stylesheet" href="my7clear.css" />
+      <title>뚜렷상</title>
+    </head>
+    <body>
+      <div class="box box1"></div>
+      <div class="box box2">
+        <!--버튼 들어갈 자리.-->
+        <div class="button-container">
+          <div class="btn" data-value="yes">뚜렷</div>
+          <div class="btn" data-value="no">두부</div>
+        </div>
+      </div>
+      <div class="box box3">
+        <div class="textbox">
+          <span class="large-text">00님의</span>
+        </div>
+        <div class="textbox">
+          <span class="large-text">인상은</span>
+        </div>
+        <div class="textbox">
+          <span class="large-text">어떤가요?</span>
+        </div>
+        <div class="textbox">
+          <span class="large-text"></span>
+        </div>
+      </div>
+    </body>
+    <script>
+      // 모든 버튼에 클릭 이벤트 추가
+      document.querySelectorAll(".btn").forEach((button) => {
+        button.addEventListener("click", function () {
+          // 버튼의 data-value 속성 값을 가져옴
+          const value = this.getAttribute("data-value");
+          // 해당 값을 URL 파라미터로 추가하여 my3.html로 이동
+          window.location.href = `my_8_mbti.html?gender=${value}`;
+        });
+      });
+    </script>
+  </html>
+</html>

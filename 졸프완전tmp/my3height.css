@@ -1,0 +1,46 @@
+body,
+html {
+  background-color: #fff8e1;
+}
+
+.large-text {
+  color: #ff4739;
+}
+.clickable {
+  color: #ff4739;
+}
+input[type="range"] {
+  background: #000000; /* 슬라이더 바 색상 */
+}
+
+/* 슬라이더 바(track) 스타일 */
+input[type="range"]::-webkit-slider-runnable-track {
+  /*슬라이더 바(트랙)의 스타일을 변경하는 가상 요소입니다. 
+    여기서 바의 색상, 높이, 둥근 모서리 등을 지정할 수 있습니다. 
+    ::-moz-range-track은 Firefox용 프리픽스입니다.*/
+  background: #000000; /* 바 색상 (녹색) */
+}
+
+input[type="range"]::-moz-range-track {
+  background: #000000; /* 바 색상 (녹색) */
+}
+
+/* 슬라이더 핸들(thumb) 스타일 */
+input[type="range"]::-webkit-slider-thumb {
+  /*슬라이더의 핸들(thumb)을 스타일링합니다. 
+    원형으로 만들고 크기, 배경색, 테두리 등을 설정했습니다. 
+    ::-moz-range-thumb은 Firefox용 프리픽스입니다.*/
+  -webkit-appearance: none; /* 기본 브라우저 스타일 제거 */
+  background: #ff4739; /* 핸들 색상 */
+  border: 2px solid #ff4739; /* 핸들 테두리 */
+}
+
+input[type="range"]::-moz-range-thumb {
+  background: #ff4739;
+  border: 2px solid #ff4739;
+}
+
+/* 슬라이더 활성화 시(bar 채우기) */
+input[type="range"]:active::-webkit-slider-runnable-track {
+  background: #ff4739; /* 활성화 시 색상 변화 */
+}

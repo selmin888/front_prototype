@@ -1,0 +1,79 @@
+.forbar {
+  flex: 1; /* 2/3 비율 */
+}
+.center {
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  text-align: center;
+}
+.forbutton {
+  flex: 2; /* 1/3 비율 */
+}
+.clickable-text {
+  cursor: pointer;
+  color: blue;
+  font-size: 18px;
+}
+
+.clickable-text:hover {
+  color: darkblue;
+}
+input[type="range"] {
+  /*기본 슬라이더의 스타일을 정의합니다. 높이, 너비, 배경색, 모서리 라운딩 등을 설정합니다.*/
+  -webkit-appearance: none; /* 기본 브라우저 스타일 제거 */
+  appearance: none;
+  width: 100%; /* 슬라이더 너비 */
+  height: 8px; /* 슬라이더 높이 */
+  background: #f9f200; /* 슬라이더 바 색상 */
+  border-radius: 5px; /* 라운드 모서리 */
+  outline: none; /* 클릭 시 아웃라인 제거 */
+}
+
+/* 슬라이더 바(track) 스타일 */
+input[type="range"]::-webkit-slider-runnable-track {
+  /*슬라이더 바(트랙)의 스타일을 변경하는 가상 요소입니다. 
+  여기서 바의 색상, 높이, 둥근 모서리 등을 지정할 수 있습니다. 
+  ::-moz-range-track은 Firefox용 프리픽스입니다.*/
+  background: #f9f200; /* 바 색상 (녹색) */
+  height: 8px;
+  border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+  background: #f9f200; /* 바 색상 (녹색) */
+  height: 8px;
+  border-radius: 5px;
+}
+
+/* 슬라이더 핸들(thumb) 스타일 */
+input[type="range"]::-webkit-slider-thumb {
+  /*슬라이더의 핸들(thumb)을 스타일링합니다. 
+  원형으로 만들고 크기, 배경색, 테두리 등을 설정했습니다. 
+  ::-moz-range-thumb은 Firefox용 프리픽스입니다.*/
+  -webkit-appearance: none; /* 기본 브라우저 스타일 제거 */
+  appearance: none;
+  width: 20px; /* 핸들 너비 */
+  height: 20px; /* 핸들 높이 */
+  background: #fff; /* 핸들 색상 */
+  border: 2px solid #f9f200; /* 핸들 테두리 */
+  border-radius: 50%; /* 핸들을 원 모양으로 */
+  cursor: pointer; /* 마우스 커서 */
+  margin-top: -6px; /* 핸들의 수직 위치를 중앙으로 조정 */
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 2px solid #f9f200;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* 슬라이더 활성화 시(bar 채우기) */
+input[type="range"]:active::-webkit-slider-runnable-track {
+  /*슬라이더를 클릭하거나 드래그할 때의 스타일을 정의합니다. 
+  이 예시에서는 슬라이더 바의 색상이 변하도록 설정했습니다.*/
+  background: #57ffeb; /* 활성화 시 색상 변화 */
+}

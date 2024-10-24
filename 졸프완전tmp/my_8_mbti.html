@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!DOCTYPE html>
+  <html lang="ko">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="2containers.css" />
+      <link rel="stylesheet" href="8button.css" />
+      <link rel="stylesheet" href="my8mbti.css" />
+      <title>MBTI</title>
+    </head>
+    <body>
+      <div class="box box1">
+        <!--버튼 들어갈 자리.-->
+        <div class="button-container" data-index="1">
+          <div class="btn" data-value="E">E</div>
+          <div class="btn" data-value="I">I</div>
+        </div>
+        <div class="button-container" data-index="2">
+          <div class="btn" data-value="N">N</div>
+          <div class="btn" data-value="S">S</div>
+        </div>
+        <div class="button-container" data-index="3">
+          <div class="btn" data-value="T">T</div>
+          <div class="btn" data-value="F">F</div>
+        </div>
+        <div class="button-container" data-index="4">
+          <div class="btn" data-value="J">J</div>
+          <div class="btn" data-value="P">P</div>
+        </div>
+      </div>
+      <div class="box box3">
+        <div class="textbox">
+          <span class="large-text">00님의</span>
+        </div>
+        <div class="textbox">
+          <span class="large-text">MBTI는</span>
+        </div>
+        <div class="textbox">
+          <span class="large-text">무엇인가요?</span>
+        </div>
+        <div class="textbox">
+          <span class="large-text"></span>
+        </div>
+      </div>
+    </body>
+    <script>
+      // 선택된 값들을 저장할 객체
+      const selections = {
+        div1: null,
+        div2: null,
+        div3: null,
+        div4: null,
+      };
+
+      // 디버깅 로그 추가
+      console.log("Ready to capture button selections.");
+
+      // 모든 버튼에 클릭 이벤트 추가
+      document.querySelectorAll(".btn").forEach((button) => {
+        button.addEventListener("click", function () {
+          const parentDiv = this.parentElement;
+          const divIndex = parentDiv.getAttribute("data-index"); // div의 인덱스를 가져옴
+
+          // 같은 div 내 다른 버튼의 active 클래스를 제거하고, 현재 버튼에 active 추가
+          parentDiv
+            .querySelectorAll(".btn")
+            .forEach((btn) => btn.classList.remove("active"));
+          this.classList.add("active");
+
+          // 선택된 값을 저장 (div1, div2, div3, div4 각각에 맞게)
+          selections[`div${divIndex}`] = this.getAttribute("data-value");
+
+          // 디버깅: 현재까지 선택된 값들 출력
+          console.log(`Selected values:`, selections);
+
+          // 모든 div에서 버튼이 선택되었는지 확인
+          if (Object.values(selections).every((value) => value !== null)) {
+            const result = Object.values(selections).join("");
+            console.log(
+              `All buttons selected, redirecting with result: ${result}`
+            );
+            // 선택된 값을 URL 파라미터로 전달하여 페이지 이동
+            setTimeout(() => {
+              window.location.href = `almostdone.html?result=${result}`;
+            }, 300); // 300ms 딜레이
+          }
+        });
+      });
+    </script>
+  </html>
+</html>

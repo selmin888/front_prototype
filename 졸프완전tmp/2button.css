@@ -1,0 +1,28 @@
+@import url("https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css");
+
+.button-container {
+  display: flex;
+  gap: 53px; /* 버튼 간격 */
+}
+
+/* 버튼 스타일 */
+.btn {
+  width: 126px;
+  height: 98px;
+  background-color: transparent; /* 버튼 내부 배경 (연한 노란색) */
+  border: 4px solid #603c11; /* 테두리 색상 */
+  border-radius: 20px; /* 둥근 모서리 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 44px;
+  color: #603c11; /* 글자 색상 (갈색) */
+  cursor: pointer;
+  font-family: "NanumGothicBold";
+}
+
+/* 버튼 클릭 시 스타일 */
+.btn:hover {
+  background-color: #e5da9d; /* 호버 시 살짝 더 진한 노란색 */
+}

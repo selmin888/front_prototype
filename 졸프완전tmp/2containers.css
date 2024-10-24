@@ -1,0 +1,59 @@
+@import url("https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css");
+body {
+  font-family: "NanumGothicLight";
+  font-family: "NanumGothic";
+  font-family: "NanumGothicBold";
+  font-family: "NanumGothicExtraBold";
+}
+@media screen and (min-width: 320px) and (max-width: 1439px) {
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #3acec7;
+  }
+  .large-text {
+    font-weight: bold;
+    font-size: 44px; /* 큰 텍스트 크기 */
+    color: #f9f200;
+  }
+
+  .textbox {
+    height: 50px;
+    padding: 5px 10px 5px 50px;
+  }
+  /* 각 박스의 가로는 100%로 설정 */
+  .box {
+    width: 100%; /* 가로를 화면 전체로 */
+  }
+
+  /* 첫 번째 박스는 전체 높이의 41.6% */
+  .box1 {
+    height: 58.4vh; /* 세로 높이 41.6% */
+    display: flex;
+    flex-direction: column; /* 세로로 정렬 */
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 두 번째 박스는 전체 높이의 16.8% */
+  .box2 {
+    height: 16.8vh; /* 세로 높이 16.8% */
+    display: flex;
+    flex-direction: column; /* 세로로 정렬 */
+    justify-content: center;
+    align-items: center;
+  }
+  /* 세 번째 박스는 전체 높이의 41.6% */
+  .box3 {
+    height: 41.6vh; /* 세로 높이 41.6% */
+  }
+
+  .clickable {
+    color: #f9f200;
+    cursor: pointer;
+  }
+}

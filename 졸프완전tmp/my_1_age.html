@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!DOCTYPE html>
+  <html lang="ko">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="3containers.css" />
+      <link rel="stylesheet" href="bar.css" />
+      <link rel="stylesheet" href="my1age.css" />
+      <title>연령</title>
+    </head>
+    <body>
+      <div class="box box1"></div>
+      <div class="box box2">
+        <div class="forbar">
+          <input type="range" min="20" max="30" value="25" id="rangeInput" />
+        </div>
+        <div class="forbutton">
+          <span class="large-text">
+            <span id="rangeValue">25</span>
+            <a href="#" id="submitButton" class="clickable">확인</a>
+          </span>
+        </div>
+      </div>
+      <div class="box box3">
+        <div class="textbox">
+          <span class="large-text">00님을</span>
+        </div>
+        <div class="textbox">
+          <span class="large-text">소개해주세요.</span>
+        </div>
+        <div class="textbox">
+          <span class="large-text">나이를</span>
+        </div>
+        <div class="textbox">
+          <span class="large-text">알려주세요.</span>
+        </div>
+      </div>
+    </body>
+    <script>
+      // range input 값을 업데이트하고 표시하는 함수
+      const rangeInput = document.getElementById("rangeInput");
+      const rangeValue = document.getElementById("rangeValue");
+
+      rangeInput.addEventListener("input", function () {
+        rangeValue.textContent = rangeInput.value;
+      });
+
+      // 확인 버튼 클릭 시 my2.html로 이동하는 함수
+      const submitButton = document.getElementById("submitButton");
+      submitButton.addEventListener("click", function () {
+        const selectedValue = rangeInput.value; // 선택된 값을 가져옴
+        window.location.href = `my_2_sex.html?value=${selectedValue}`; // 값과 함께 my2.html로 이동
+      });
+    </script>
+  </html>
+</html>
